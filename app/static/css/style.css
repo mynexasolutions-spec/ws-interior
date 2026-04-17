@@ -101,21 +101,28 @@
     color: var(--espresso);
     text-decoration: none;
     letter-spacing: 0.05em;
-    display: flex;
+    display: grid;
     align-items: center;
     gap: 0px;
+    grid-template-columns: auto 1fr;
+    column-gap: 15px;
+    row-gap: 2px;
+    
+    
   }
   .nav-logo-img {
     height: 35px;
+    grid-row: span 2;
     width: auto;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
   }
   .nav-logo span {
+    grid-column: 2;
     display: block;
     font-size: 0.6rem;
     font-family: 'Jost', sans-serif;
     letter-spacing: 0.25em;
-    color: var(--gold-dark);
+    color: var(--gold);
     font-weight: 500;
     text-transform: uppercase;
   }
