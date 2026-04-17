@@ -1,9 +1,4 @@
-  // PRELOADER
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('preloader').classList.add('hide');
-    }, 2200);
-  });
+
 
   // CUSTOM CURSOR REMOVED
 
@@ -113,10 +108,28 @@
   setInterval(nextSlide, 5000);
 
   // PORTFOLIO TABS
-  document.querySelectorAll('.tab-btn').forEach(btn => {
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  tabBtns.forEach(btn => {
     btn.addEventListener('click', function() {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      // Update active btn
+      tabBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
+
+      const filter = this.textContent.toLowerCase().trim();
+
+      portfolioItems.forEach(item => {
+        const itemCat = item.getAttribute('data-category');
+        if (filter === 'all' || filter === itemCat) {
+          item.style.display = 'block';
+          // Re-trigger reveal animation if needed
+          setTimeout(() => item.classList.add('visible'), 50);
+        } else {
+          item.style.display = 'none';
+          item.classList.remove('visible');
+        }
+      });
     });
   });
 
