@@ -1185,13 +1185,40 @@
   @media (max-width: 480px) {
     section { padding: 4rem 5%; }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
-    .service-card { padding: 1rem 0.5rem; min-height: 200px; text-align: center; justify-content: center; border: 1px solid rgba(201,169,110,0.1); }
+    .service-card { 
+      padding: 1rem 0.5rem; 
+      min-height: 200px; 
+      text-align: center; 
+      justify-content: center; 
+      border: 1px solid rgba(201,169,110,0.1);
+      outline: none;
+    }
     .service-card::after { opacity: 0.6; } /* Bring back the desktop overlay look */
     .service-name { align-self: center; color: var(--espresso); background: #ba9133; width: fit-content; font-size: 0.75rem; margin-bottom: 0.4rem; letter-spacing: 0; }
     .service-icon { color: var(--gold); border: 1px solid rgba(201,168,76,0.3); margin: 0 auto 0.5rem; width: 32px; height: 32px; }
-    .service-icon svg { color: var(--gold) !important; width: 14px; height: 14px; }
+    .service-icon svg { color: var(--gold) !important; width: 14px; height: 14px; transition: all 0.2s; }
     .service-num { color:#fff; font-size: 1.5rem; top: 0.5rem; right: 0.5rem; opacity: 0.4; }
-    .service-link {  color: var(--gold) !important; padding: 0.3rem 0.6rem; font-size: 0.55rem; margin-top: 0.5rem; display: inline-flex;  width:fit-content; align-self: center;}
+    .service-link { 
+      color: var(--gold) !important; 
+      border: 1px solid var(--gold);
+      padding: 0.3rem 0.6rem; 
+      font-size: 0.55rem; 
+      margin-top: 0.5rem; 
+      display: inline-flex; 
+      width: fit-content; 
+      align-self: center;
+      transition: all 0.2s;
+    }
+
+    /* Active & Focus States for Mobile Feedback */
+    .service-card:active .service-icon svg,
+    .service-card:focus .service-icon svg { color: var(--espresso) !important; }
+    
+    .service-card:active .service-link,
+    .service-card:focus .service-link { 
+      background: var(--gold) !important; 
+      color: var(--espresso) !important; 
+    }
 
 
     .portfolio-grid { grid-template-columns: 1fr; }
