@@ -66,10 +66,9 @@
   nav.scrolled {
     background: rgba(248, 244, 238, 0.98);
     backdrop-filter: blur(25px);
-    padding: 0.7rem 4%;
+    padding: 0.45rem 4%;
     border-bottom: 2px solid var(--gold);
     box-shadow: 0 4px 30px rgba(26, 18, 8, 0.1);
-  
   }
 
   .nav-logo {
@@ -472,7 +471,7 @@
 
   /* SECTIONS COMMON */
   section {
-    padding: 6rem 4%;
+    padding: 4rem 4%;
   }
 
   .section-label {
@@ -544,7 +543,7 @@
   #about {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 3.5rem;
     align-items: center;
   }
 
@@ -1043,7 +1042,7 @@
     background: var(--bg-main);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 3.5rem;
     align-items: center;
   }
 
@@ -1135,7 +1134,7 @@
   }
 
   .testimonials-header {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .testimonial-track {
@@ -1227,7 +1226,7 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
 
   .slider-btn {
@@ -1304,7 +1303,7 @@
     background: var(--bg-main);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 3rem;
     align-items: start;
   }
 
