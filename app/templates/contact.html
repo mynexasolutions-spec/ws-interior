@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us – WS Interior Solution{% endblock %}
+
+{% block content %}
+<section id="contact-hero" style="padding-top: 10rem; background: var(--bg-sec); text-align: center;">
+    <div class="reveal">
+        <div class="section-label" style="justify-content: center;">Get in Touch</div>
+        <h1 class="section-title" style="text-align: center;">Let's Create Your <em>Dream Space</em></h1>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-weight: 300;">
+            Have a project in mind? We'd love to hear from you. Send us a message or give us a call to start your interior design journey.
+        </p>
+    </div>
+</section>
+
+<section id="contact" style="padding: 6rem 4%; background: var(--bg-main);">
+    <div class="contact-info reveal">
+        <div class="section-label">Contact Details</div>
+        <h2 class="section-title">Where to <em>Find Us</em></h2>
+        <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.9;font-weight:300;margin-top:1.2rem">
+            Reach out to us for a free consultation. We'd love to hear about your project and explore how we can help bring your vision to life.
+        </p>
+        
+        <div class="contact-details" style="margin-top: 2rem;">
+            <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <div class="contact-item-text">
+                    <h4>Office Address</h4>
+                    <p>Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">📞</div>
+                <div class="contact-item-text">
+                    <h4>Call Us</h4>
+                    <a href="tel:8009135913">+91 8009135913</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-item-icon">✉️</div>
+                <div class="contact-item-text">
+                    <h4>Email Us</h4>
+                    <a href="mailto:wsinterior01@gmail.com">wsinterior01@gmail.com</a>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <div class="contact-form reveal">
+        <div class="section-label">Send a Message</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-bottom:2rem">Start Your <em style="color:var(--gold);font-style:italic">Project</em></h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="firstName" placeholder="Your first name">
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="lastName" placeholder="Your last name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91 00000 00000">
+        </div>
+        <div class="form-group">
+            <label>Service Interested In</label>
+            <select id="service">
+                <option value="">Select a service</option>
+                <option>Residential Interiors</option>
+                <option>Commercial Spaces</option>
+                <option>Modular Kitchen</option>
+                <option>Luxury Bedroom</option>
+                <option>Custom Furniture</option>
+                <option>Turnkey Project</option>
+                <option>False Ceilings</option>
+                <option>Wallpapers & Textures</option>
+                <option>Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Your Message</label>
+            <textarea id="message" placeholder="Tell us about your project, space, budget, and timeline..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+    </div>
+</section>
+
+<style>
+    #contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 992px) {
+        #contact {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        
+        #contact-hero {
+            padding-top: 8rem;
+        }
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: var(--bg-sec);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .contact-item:hover {
+        transform: translateX(10px);
+    }
+
+    .contact-item-icon {
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .contact-item-text h4 {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--gold);
+        margin-bottom: 0.2rem;
+    }
+
+    .contact-item-text p, .contact-item-text a {
+        font-size: 1rem;
+        color: var(--text-main);
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

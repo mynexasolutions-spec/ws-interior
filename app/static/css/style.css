@@ -48,9 +48,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* CURSOR REMOVED */
-
-
 
   /* NAVBAR */
   nav {
@@ -72,13 +69,14 @@
     padding: 0.7rem 4%;
     border-bottom: 2px solid var(--gold);
     box-shadow: 0 4px 30px rgba(26, 18, 8, 0.1);
+  
   }
 
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
+    font-size: 1.85rem;
     font-weight: 600;
-    color: var(--espresso);
+    color: var(--charcoal);
     text-decoration: none;
     letter-spacing: 0.05em;
     display: flex;
@@ -96,6 +94,8 @@
     display: flex;
     flex-direction: column;
     line-height: 1.1;
+    font-size: 2.2rem;
+
   }
 
   .nav-logo span {
@@ -147,22 +147,25 @@
   }
 
   .nav-cta {
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold);
+    background: var(--gold);
+    color: var(--espresso);
     padding: 0.6rem 1.4rem;
     font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.15em;
+    font-weight: 500;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: none;
     text-decoration: none;
+    border: none;
+    
   }
 
   .nav-cta:hover {
     background: var(--gold);
-    color: var(--dark);
+    color: #fff;
+    transform: none;
   }
 
   .hamburger {
@@ -175,7 +178,7 @@
   .hamburger span {
     display: block;
     width: 25px;
-    height: 1px;
+    height: 2px;
     background: var(--gold);
     transition: all 0.3s;
   }
@@ -184,7 +187,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(10, 10, 10, 0.97);
+    background: var(--bg-main);
     z-index: 999;
     flex-direction: column;
     align-items: center;
@@ -197,11 +200,11 @@
   }
 
   .mobile-menu a {
-    color: var(--text);
+    color: var(--espresso);
     text-decoration: none;
     font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 0.1em;
     transition: color 0.3s;
   }
@@ -242,7 +245,7 @@
   .hero-img {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1800&q=80') center/cover no-repeat;
+    background: url('../img/hero-img.jpg') center/cover no-repeat;
     opacity: 0.9;
     z-index: 1;
     transform: scale(1.05);
@@ -714,35 +717,35 @@
   }
 
   .services-grid .service-card:nth-child(1) {
-    background: url('https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80') center/cover;
+    background: url('../img/residential-interior.jpg') center/cover;
   }
 
   .services-grid .service-card:nth-child(2) {
-    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80') center/cover;
+    background: url('../img/office.jpg') center/cover;
   }
 
   .services-grid .service-card:nth-child(3) {
-    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80') center/cover;
+    background: url('../img/img1.jpeg') center/cover;
   }
 
   .services-grid .service-card:nth-child(4) {
-    background: url('https://images.unsplash.com/photo-1616137466211-f939a420be84?w=800&q=80') center/cover;
+    background: url('../img/bedroom.png') center/cover;
   }
 
   .services-grid .service-card:nth-child(5) {
-    background: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80') center/cover;
+    background: url('../img/furniture.png') center/cover;
   }
 
   .services-grid .service-card:nth-child(6) {
-    background: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80') center/cover;
+    background: url('../img/turnkey.jpg') center/cover;
   }
 
   .services-grid .service-card:nth-child(7) {
-    background: url('https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&q=80') center/cover;
+    background: url('../img/50.jpeg') center/cover;
   }
 
   .services-grid .service-card:nth-child(8) {
-    background: url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&q=80') center/cover;
+    background: url('../img/wallpaper.jpg') center/cover;
   }
 
   .service-card::before {
@@ -823,11 +826,11 @@
     width: 100%;
   }
 
-  .services-desc{
+  .services-desc {
     max-width: 500px;
     margin-right: 0px;
     margin-bottom: 0px;
-    
+
   }
 
   /* PORTFOLIO */
@@ -925,29 +928,24 @@
     transition: transform 0.6s ease;
   }
 
-  .portfolio-item:hover .portfolio-img {
-    transform: scale(1.07);
-  }
 
   .portfolio-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, transparent 60%);
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.4s;
     display: flex;
     align-items: flex-end;
     padding: 1.5rem;
   }
 
-  .portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
-  }
 
   .portfolio-info h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.3rem;
     font-weight: 400;
+    color: #ba9133
   }
 
   .portfolio-info span {
@@ -957,6 +955,7 @@
     color: var(--gold);
     margin-top: 0.3rem;
     display: block;
+    opacity: 0.8;
   }
 
   /* PROCESS */
@@ -1731,8 +1730,8 @@
     }
 
     .nav-logo-text {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
     }
 
     .nav-logo span {
@@ -2015,31 +2014,25 @@
     transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
   }
 
-  .gallery-item:hover img {
-    transform: scale(1.1);
-  }
 
   .gallery-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(26, 18, 8, 0.8) 0%, transparent 60%);
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.4s ease;
     display: flex;
     align-items: flex-end;
     padding: 2rem;
   }
 
-  .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-  }
 
   .gallery-info h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     color: var(--gold);
     margin-bottom: 0.2rem;
-    transform: translateY(20px);
+    transform: translateY(0);
     transition: transform 0.4s ease 0.1s;
   }
 
@@ -2049,23 +2042,19 @@
     text-transform: uppercase;
     color: var(--warm-white);
     opacity: 0.8;
-    transform: translateY(20px);
+    transform: translateY(0);
     transition: transform 0.4s ease 0.2s;
     display: block;
   }
 
-  .gallery-item:hover .gallery-info h3,
-  .gallery-item:hover .gallery-info span {
-    transform: translateY(0);
-  }
 
   @media (max-width: 768px) {
     .gallery-grid {
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
-    
+
     .gallery-item {
-        aspect-ratio: 1;
+      aspect-ratio: 1;
     }
   }

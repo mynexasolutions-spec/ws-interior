@@ -10,6 +10,14 @@ def index():
 def gallery():
     return render_template('gallery.html')
 
+@current_app.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
+
+@current_app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 @current_app.route('/api/contact', methods=['POST'])
 def contact_api():
     try:

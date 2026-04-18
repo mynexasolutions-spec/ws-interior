@@ -16,10 +16,8 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close" onclick="toggleMenu()">✕</button>
         <a href="{{ url_for('index') }}#hero" onclick="toggleMenu()">Home</a>
-        <a href="{{ url_for('index') }}#about" onclick="toggleMenu()">About</a>
-        <a href="{{ url_for('index') }}#services" onclick="toggleMenu()">Services</a>
-        <a href="{{ url_for('index') }}#portfolio" onclick="toggleMenu()">Portfolio</a>
-        <a href="{{ url_for('index') }}#contact" onclick="toggleMenu()">Contact</a>
+        <a href="{{ url_for('portfolio') }}" onclick="toggleMenu()">Portfolio</a>
+        <a href="{{ url_for('contact') }}" onclick="toggleMenu()">Contact</a>
         <a href="{{ url_for('gallery') }}" onclick="toggleMenu()">Gallery</a>
     </div>
 
@@ -34,11 +32,9 @@
         </a>
         <ul class="nav-links">
             <li><a href="{{ url_for('index') }}#hero">Home</a></li>
-            <li><a href="{{ url_for('index') }}#about">About</a></li>
-            <li><a href="{{ url_for('index') }}#services">Services</a></li>
-            <li><a href="{{ url_for('index') }}#portfolio">Portfolio</a></li>
+            <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
             <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
-            <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
         <a href="tel:8009135913" class="nav-cta">Call Us</a>
         <div class="hamburger" onclick="toggleMenu()">
@@ -81,7 +77,7 @@
                 <h4>Company</h4>
                 <ul class="footer-links">
                     <li><a href="{{ url_for('index') }}#about">About Us</a></li>
-                    <li><a href="{{ url_for('index') }}#portfolio">Portfolio</a></li>
+                    <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
                     <li><a href="{{ url_for('index') }}#process">Our Process</a></li>
                     <li><a href="{{ url_for('index') }}#testimonials">Testimonials</a></li>
                     <li><a href="{{ url_for('index') }}#contact">Contact</a></li>
