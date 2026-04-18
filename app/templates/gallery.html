@@ -7,7 +7,8 @@
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
         <div class="section-label" style="justify-content: center;">Portfolio</div>
         <h1 class="section-title" style="text-align: center;">Our <em>Gallery</em></h1>
-        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-weight: 300;">Explore our collection of premium interior designs, where luxury meets functionality.</p>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--text-muted); font-weight: 300;">Explore our collection
+            of premium interior designs, where luxury meets functionality.</p>
     </div>
 
     <div class="gallery-grid container">
@@ -16,8 +17,20 @@
             <img src="{{ url_for('static', filename='img/img' ~ i ~ '.jpeg') }}" alt="Gallery Project {{ i }}">
             <div class="gallery-overlay">
                 <div class="gallery-info">
-
                     <span>Premium Interior Design</span>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {# Specific Interior Images #}
+        {% set other_imgs = ['living-room.jpg', 'master-bedroom.png', 'kitchen.jpg', 'office.jpg', 'dining-space.jpg', '46.jpeg', 'bedroom.png', 'false-ceiling.png', 'furniture.png', 'home1.jpg', 'home2.jpg',  'residential-interior.jpg', 'turnkey.jpg', 'wallpaper.jpg', '50.jpeg'] %}
+        {% for img in other_imgs %}
+        <div class="gallery-item reveal">
+            <img src="{{ url_for('static', filename='img/' ~ img) }}" alt="WS Interior Design">
+            <div class="gallery-overlay">
+                <div class="gallery-info">
+                    <span>WS Luxury Collection</span>
                 </div>
             </div>
         </div>
@@ -28,7 +41,8 @@
 <section id="gallery-cta" style="background: var(--bg-main); text-align: center; padding: 6rem 4%;">
     <div class="reveal">
         <h2 class="section-title" style="text-align: center;">Inspired by our <em>Work?</em></h2>
-        <p style="margin-bottom: 2rem; color: var(--text-body);">Let's discuss how we can transform your space into a masterpiece.</p>
+        <p style="margin-bottom: 2rem; color: var(--text-body);">Let's discuss how we can transform your space into a
+            masterpiece.</p>
         <a href="{{ url_for('index') }}#contact" class="btn-primary">Start Your Project</a>
     </div>
 </section>

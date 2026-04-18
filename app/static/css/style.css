@@ -1993,8 +1993,8 @@
   /* GALLERY PAGE */
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
     padding: 2rem 4%;
   }
 
@@ -2050,11 +2050,20 @@
 
   @media (max-width: 768px) {
     .gallery-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
 
     .gallery-item {
       aspect-ratio: 1;
+    }
+
+    .gallery-info span {
+      font-size: 0.45rem;
+      letter-spacing: 0.1em;
+    }
+
+    .gallery-overlay {
+      padding: 0.9rem;
     }
   }
