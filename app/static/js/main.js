@@ -54,84 +54,96 @@
       }
     });
   }, { threshold: 0.5 });
-  statsObserver.observe(document.querySelector('.stats-bar'));
+  const statsBar = document.querySelector('.stats-bar');
+  if (statsBar) {
+    statsObserver.observe(statsBar);
+  }
 
   // TESTIMONIAL SLIDER
-  let currentSlide = 0;
   const slider = document.getElementById('testimonialSlider');
-  const cards = slider.querySelectorAll('.testimonial-card');
-  const dotsContainer = document.getElementById('sliderDots');
-  let slidesPerView = window.innerWidth >= 768 ? 3 : 1;
+  if (slider) {
+    let currentSlide = 0;
+    const cards = slider.querySelectorAll('.testimonial-card');
+    const dotsContainer = document.getElementById('sliderDots');
+    let slidesPerView = window.innerWidth >= 768 ? 3 : 1;
 
-  function initSlider() {
-    slidesPerView = window.innerWidth >= 768 ? 3 : 1;
-    const totalSlides = Math.ceil(cards.length / slidesPerView);
-    
-    // Clear and rebuild dots
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot' + (i === currentSlide ? ' active' : '');
-      dot.onclick = () => goToSlide(i);
-      dotsContainer.appendChild(dot);
+    function initSlider() {
+      slidesPerView = window.innerWidth >= 768 ? 3 : 1;
+      const totalSlides = Math.ceil(cards.length / slidesPerView);
+      
+      if (dotsContainer) {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'dot' + (i === currentSlide ? ' active' : '');
+          dot.onclick = () => goToSlide(i);
+          dotsContainer.appendChild(dot);
+        }
+      }
+      
+      if (currentSlide >= totalSlides) currentSlide = 0;
+      goToSlide(currentSlide);
     }
-    
-    // Reset to first slide if out of bounds after resize
-    if (currentSlide >= totalSlides) currentSlide = 0;
-    goToSlide(currentSlide);
-  }
 
-  function goToSlide(n) {
-    const totalSlides = Math.ceil(cards.length / slidesPerView);
-    if (n >= totalSlides) n = 0;
-    if (n < 0) n = totalSlides - 1;
-    currentSlide = n;
-    
-    const containerWidth = slider.parentElement.offsetWidth;
-    slider.style.transform = `translateX(-${n * containerWidth}px)`;
-    
-    dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
-      d.classList.toggle('active', i === n);
-    });
-  }
+    function goToSlide(n) {
+      const totalSlides = Math.ceil(cards.length / slidesPerView);
+      if (n >= totalSlides) n = 0;
+      if (n < 0) n = totalSlides - 1;
+      currentSlide = n;
+      
+      const containerWidth = slider.parentElement.offsetWidth;
+      slider.style.transform = `translateX(-${n * containerWidth}px)`;
+      
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+          d.classList.toggle('active', i === n);
+        });
+      }
+    }
 
-  function nextSlide() {
-    const totalSlides = Math.ceil(cards.length / slidesPerView);
-    goToSlide(currentSlide + 1);
-  }
-  function prevSlide() {
-    goToSlide(currentSlide - 1);
-  }
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
 
-  window.addEventListener('resize', initSlider);
-  initSlider();
-  setInterval(nextSlide, 5000);
+    window.addEventListener('resize', initSlider);
+    initSlider();
+    setInterval(nextSlide, 5000);
+
+    // Make functions global for inline onclick
+    window.nextSlide = nextSlide;
+    window.prevSlide = prevSlide;
+  }
 
   // PORTFOLIO TABS
   const tabBtns = document.querySelectorAll('.tab-btn');
   const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Update active btn
-      tabBtns.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+  if (tabBtns.length > 0) {
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Update active btn
+        tabBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
 
-      const filter = this.textContent.toLowerCase().trim();
+        const filter = this.textContent.toLowerCase().trim();
 
-      portfolioItems.forEach(item => {
-        const itemCat = item.getAttribute('data-category');
-        if (filter === 'all' || filter === itemCat) {
-          item.style.display = 'block';
-          // Re-trigger reveal animation if needed
-          setTimeout(() => item.classList.add('visible'), 50);
-        } else {
-          item.style.display = 'none';
-          item.classList.remove('visible');
-        }
+        portfolioItems.forEach(item => {
+          const itemCat = item.getAttribute('data-category');
+          if (filter === 'all' || filter === itemCat) {
+            item.style.display = 'block';
+            // Re-trigger reveal animation if needed
+            setTimeout(() => item.classList.add('visible'), 50);
+          } else {
+            item.style.display = 'none';
+            item.classList.remove('visible');
+          }
+        });
       });
     });
-  });
+  }
 
   // FORM SUBMIT (Refactored for Flask)
   async function handleSubmit() {

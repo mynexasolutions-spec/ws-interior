@@ -1,59 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WS Interior Solution – Redefining Spaces</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="mobile-close" onclick="toggleMenu()">✕</button>
-        <a href="#hero" onclick="toggleMenu()">Home</a>
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
-    </div>
-
-    <!-- NAVBAR -->
-    <nav id="navbar">
-        <a href="#hero" class="nav-logo">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="WS Logo" class="nav-logo-img">
-            <div class="nav-logo-text">
-                WS Interior
-                <span>Solution · Redefining Spaces</span>
-            </div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="tel:8009135913" class="nav-cta">Call Us</a>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
-    </nav>
-
+{% block content %}
     <!-- HERO -->
     <section id="hero">
         <div class="hero-bg"></div>
         <div class="hero-img"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-sub">Est. Premium Interiors · Delhi NCR</div>
+            <div class="hero-sub">Est. Premium Interiors · Mumbai, Maharashtra</div>
             <h1 class="hero-title">WS Interior<em>Solution</em></h1>
             <p class="hero-tagline">Crafting Spaces That Inspire · Transform · Endure</p>
             <div class="hero-cta-group">
@@ -205,7 +159,7 @@
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <h3>Contemporary Living Room</h3>
-                        <span>Residential · Delhi</span>
+                        <span>Residential · Mumbai</span>
                     </div>
                 </div>
             </div>
@@ -214,7 +168,7 @@
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <h3>Luxury Master Bedroom</h3>
-                        <span>Residential · Noida</span>
+                        <span>Residential · Bandra</span>
                     </div>
                 </div>
             </div>
@@ -223,7 +177,7 @@
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <h3>Modular Kitchen</h3>
-                        <span>Residential · Gurgaon</span>
+                        <span>Residential · Navi Mumbai</span>
                     </div>
                 </div>
             </div>
@@ -232,7 +186,7 @@
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <h3>Corporate Office</h3>
-                        <span>Commercial · Delhi</span>
+                        <span>Commercial · Mumbai</span>
                     </div>
                 </div>
             </div>
@@ -241,7 +195,7 @@
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <h3>Dining Space</h3>
-                        <span>Residential · Faridabad</span>
+                        <span>Residential · Thane</span>
                     </div>
                 </div>
             </div>
@@ -250,10 +204,15 @@
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
                         <h3>Luxury Bathroom</h3>
-                        <span>Residential · Gurgaon</span>
+                        <span>Residential · Navi Mumbai</span>
                     </div>
                 </div>
             </div>
+        </div>
+        
+        <!-- Gallery Button -->
+        <div style="text-align: center; margin-top: 4rem;" class="reveal">
+            <a href="{{ url_for('gallery') }}" class="btn-primary">View Full Gallery</a>
         </div>
     </section>
 
@@ -292,7 +251,7 @@
         <div class="why-text reveal">
             <div class="section-label">Why Choose Us</div>
             <h2 class="section-title">Design That <em>Speaks</em> For Itself</h2>
-            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.9;font-weight:300;margin-top:1.2rem">We don't just design spaces — we create experiences. Our commitment to quality, creativity, and client satisfaction has made WS Interior Solution the most trusted interior design partner in Delhi NCR.</p>
+            <p style="color:var(--text-muted);font-size:0.9rem;line-height:1.9;font-weight:300;margin-top:1.2rem">We don't just design spaces — we create experiences. Our commitment to quality, creativity, and client satisfaction has made WS Interior Solution the most trusted interior design partner in Mumbai, Maharashtra.</p>
             <div class="why-grid">
                 <div class="why-item">
                     <div class="why-item-icon">
@@ -334,31 +293,31 @@
                 <div class="testimonial-card">
                     <p class="testimonial-text">WS Interior Solution completely transformed our apartment. Waseem and his team brought ideas we never even imagined. The attention to detail, quality of materials, and the final result surpassed all our expectations. Truly a world-class experience.</p>
                     <div class="testimonial-author">Rajan Sharma</div>
-                    <div class="testimonial-role">Homeowner · Delhi</div>
+                    <div class="testimonial-role">Homeowner · Mumbai</div>
                     <div class="testimonial-stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">Professional, creative, and incredibly organized. They turned our office into a stunning space that has impressed every client who walks in. The team was punctual, within budget, and delivered exactly what was promised. Highly recommend!</p>
                     <div class="testimonial-author">Priya Mehta</div>
-                    <div class="testimonial-role">Business Owner · Noida</div>
+                    <div class="testimonial-role">Business Owner · Bandra</div>
                     <div class="testimonial-stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">From the first consultation to the final handover, the experience was seamless. Their 3D visualizations helped us see the space before any work began. The modular kitchen they designed is both beautiful and incredibly functional.</p>
                     <div class="testimonial-author">Ankit & Sunita Gupta</div>
-                    <div class="testimonial-role">Homeowners · Gurgaon</div>
+                    <div class="testimonial-role">Homeowners · Navi Mumbai</div>
                     <div class="testimonial-stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">We had a tight timeline and a clear vision — WS Interior Solution delivered both with ease. The master bedroom design is simply breathtaking. Every morning feels like waking up in a luxury hotel. Worth every rupee!</p>
                     <div class="testimonial-author">Vikram Singh</div>
-                    <div class="testimonial-role">Homeowner · Faridabad</div>
+                    <div class="testimonial-role">Homeowner · Thane</div>
                     <div class="testimonial-stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
                     <p class="testimonial-text">We achieved our dream home with their knowledge, guidance, and farsightedness. Never seen such professional approach combined with warmth. The false ceiling work and lighting design has completely elevated our living room. Exceptional!</p>
                     <div class="testimonial-author">Neha Kapoor</div>
-                    <div class="testimonial-role">Homeowner · Delhi NCR</div>
+                    <div class="testimonial-role">Homeowner · Mumbai NCR</div>
                     <div class="testimonial-stars">★★★★★</div>
                 </div>
             </div>
@@ -431,72 +390,4 @@
             <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
         </div>
     </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <a href="#hero" class="nav-logo" style="font-size:1.8rem">
-                    <div class="nav-logo-text">
-                        WS Interior
-                        <span>Solution · Redefining Spaces</span>
-                    </div>
-                </a>
-                <p>We transform spaces into experiences. Premium interior design services across Delhi NCR — where every detail is crafted with passion and purpose.</p>
-                <div class="footer-social">
-                    <a href="#" class="social-btn" title="Facebook">f</a>
-                    <a href="#" class="social-btn" title="Instagram">in</a>
-                    <a href="#" class="social-btn" title="WhatsApp">W</a>
-                    <a href="#" class="social-btn" title="YouTube">▶</a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Services</h4>
-                <ul class="footer-links">
-                    <li><a href="#services">Residential Interiors</a></li>
-                    <li><a href="#services">Commercial Spaces</a></li>
-                    <li><a href="#services">Modular Kitchens</a></li>
-                    <li><a href="#services">Luxury Bedrooms</a></li>
-                    <li><a href="#services">Custom Furniture</a></li>
-                    <li><a href="#services">Turnkey Projects</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul class="footer-links">
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#process">Our Process</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <ul class="footer-links">
-                    <li><a href="tel:8009135913">+91 8009135913</a></li>
-                    <li><a href="mailto:waseemmohd09913@gmail.com">waseemmohd09913@gmail.com</a></li>
-                    <li><a href="#">Delhi NCR, India</a></li>
-                    <li><a href="#">Mon–Sat: 9AM–7PM</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 WS Interior Solution. All rights reserved.</p>
-            <p>Crafted with ❤ for beautiful spaces</p>
-        </div>
-    </footer>
-
-    <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/918009135913" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
-        </svg>
-    </a>
-
-    <!-- SCROLL TO TOP -->
-    <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-</html>
+{% endblock %}

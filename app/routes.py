@@ -6,6 +6,10 @@ from .models import ContactMessage
 def index():
     return render_template('index.html')
 
+@current_app.route('/gallery')
+def gallery():
+    return render_template('gallery.html')
+
 @current_app.route('/api/contact', methods=['POST'])
 def contact_api():
     try:
