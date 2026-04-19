@@ -1592,6 +1592,40 @@
     }
   }
 
+  /* CALL FLOAT */
+  .call-float {
+    position: fixed;
+    bottom: calc(2rem + 64px);
+    right: 2rem;
+    width: 54px;
+    height: 54px;
+    background: #ff5e5e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(255, 94, 94, 0.4);
+    transition: all 0.3s;
+    animation: pulse-red 2s ease infinite;
+  }
+
+  .call-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(255, 94, 94, 0.5);
+    background: #ff3d3d;
+  }
+
+  @keyframes pulse-red {
+    0%, 100% {
+      box-shadow: 0 4px 20px rgba(255, 94, 94, 0.4);
+    }
+    50% {
+      box-shadow: 0 4px 40px rgba(255, 94, 94, 0.7);
+    }
+  }
+
   /* SCROLL TO TOP */
   .scroll-top {
     position: fixed;
