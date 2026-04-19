@@ -158,7 +158,7 @@
     transition: none;
     text-decoration: none;
     border: none;
-    
+
   }
 
   .nav-cta:hover {
@@ -1618,9 +1618,12 @@
   }
 
   @keyframes pulse-red {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: 0 4px 20px rgba(255, 94, 94, 0.4);
     }
+
     50% {
       box-shadow: 0 4px 40px rgba(255, 94, 94, 0.7);
     }
