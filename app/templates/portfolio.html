@@ -22,7 +22,7 @@
         {% for i in range(1, 13) %}
         <div class="portfolio-card-wrap reveal" style="transition-delay: {{ loop.index0 * 0.1 }}s;">
             <div class="portfolio-card">
-                <img src="{{ url_for('static', filename='img/proj' ~ i ~ '.jpeg') }}" alt="Project {{ i }}" class="portfolio-card-img">
+                <img src="{{ url_for('static', filename='img/proj' ~ i ~ '.webp') }}" alt="WS Interior Solution - Premium Interior Project {{ i }} Mumbai" class="portfolio-card-img" loading="lazy" decoding="async">
                 <div class="portfolio-card-overlay">
                     <div class="portfolio-card-info">
                         <span class="project-tag">Premium Design</span>

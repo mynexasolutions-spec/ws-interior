@@ -14,7 +14,7 @@
     <div class="gallery-grid container">
         {% for i in range(1, 6) %}
         <div class="gallery-item reveal">
-            <img src="{{ url_for('static', filename='img/img' ~ i ~ '.jpeg') }}" alt="Gallery Project {{ i }}">
+            <img src="{{ url_for('static', filename='img/img' ~ i ~ '.webp') }}" alt="Premium Interior Design Project {{ i }} - WS Interior Mumbai" loading="lazy" decoding="async">
             <div class="gallery-overlay">
                 <div class="gallery-info">
                     <span>Premium Interior Design</span>
@@ -27,7 +27,7 @@
         {% set other_imgs = ['living-room.jpg', 'master-bedroom.png', 'kitchen.jpg', 'office.jpg', 'dining-space.jpg', '46.jpeg', 'bedroom.png', 'false-ceiling.png', 'furniture.png', 'home1.jpg', 'home2.jpg',  'residential-interior.jpg', 'turnkey.jpg', 'wallpaper.jpg', '50.jpeg'] %}
         {% for img in other_imgs %}
         <div class="gallery-item reveal">
-            <img src="{{ url_for('static', filename='img/' ~ img) }}" alt="WS Interior Design">
+            <img src="{{ url_for('static', filename='img/' ~ img | replace('.jpg', '.webp') | replace('.jpeg', '.webp') | replace('.png', '.webp')) }}" alt="{{ img | replace('-', ' ') | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | title }} Interior Design - WS Interior Solution Mumbai" loading="lazy" decoding="async">
             <div class="gallery-overlay">
                 <div class="gallery-info">
                     <span>WS Luxury Collection</span>

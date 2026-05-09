@@ -4,14 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}WS Interior Solution – Redefining Spaces{% endblock %}</title>
+    <title>{% block title %}WS Interior Solution – Best Interior Designer in Mumbai, Maharashtra{% endblock %}</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="WS Interior Solution is a premier interior design firm in Mumbai, specializing in luxury residential, commercial, and modular kitchen projects. Transform your space with our expert designers.">
+    <meta name="keywords" content="Interior Designer in Mumbai, Best Interior Design Company Mumbai, Home Interior Mumbai, Commercial Interior Mumbai, Modular Kitchen Navi Mumbai, Luxury Interior Bandra, WS Interior Solution, Turnkey Interior Mumbai, Office Interior Design Mumbai">
+    <meta name="author" content="WS Interior Solution">
+    <link rel="canonical" href="https://ws-interior.vercel.app{{ request.path }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ws-interior.vercel.app{{ request.path }}">
+    <meta property="og:title" content="WS Interior Solution – Redefining Spaces in Mumbai">
+    <meta property="og:description" content="Premium interior design services across Mumbai, Maharashtra. We transform residential and commercial spaces into experiences.">
+    <meta property="og:image" content="{{ url_for('static', filename='img/home1.webp', _external=True) }}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ws-interior.vercel.app{{ request.path }}">
+    <meta property="twitter:title" content="WS Interior Solution – Redefining Spaces in Mumbai">
+    <meta property="twitter:description" content="Premium interior design services across Mumbai, Maharashtra. We transform residential and commercial spaces into experiences.">
+    <meta property="twitter:image" content="{{ url_for('static', filename='img/home1.webp', _external=True) }}">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "WS Interior Solution",
+      "image": "{{ url_for('static', filename='img/logo.webp', _external=True) }}",
+      "@id": "https://ws-interior.vercel.app",
+      "url": "https://ws-interior.vercel.app",
+      "telephone": "+918009135913",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bandra",
+        "addressLocality": "Mumbai",
+        "addressRegion": "MH",
+        "postalCode": "400050",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.0596,
+        "longitude": 72.8295
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/ws_interior_solution/"
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/png">
+    <link rel="icon" href="{{ url_for('static', filename='img/logo.webp') }}" type="image/webp">
     {% block extra_css %}{% endblock %}
 </head>
 
@@ -29,7 +92,7 @@
     <!-- NAVBAR -->
     <nav id="navbar">
         <a href="{{ url_for('index') }}#hero" class="nav-logo">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="WS Logo" class="nav-logo-img">
+            <img src="{{ url_for('static', filename='img/logo.webp') }}" alt="WS Logo" class="nav-logo-img" decoding="async">
             <div class="nav-logo-text">
                 WS Interior
                 <span>Solution · Redefining Spaces</span>

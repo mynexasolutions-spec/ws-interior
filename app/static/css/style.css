@@ -244,7 +244,7 @@
   .hero-img {
     position: absolute;
     inset: 0;
-    background: url('../img/hero-img.jpg') center/cover no-repeat;
+    background: url('../img/hero-img.webp') center/cover no-repeat;
     opacity: 0.9;
     z-index: 1;
     transform: scale(1.05);
@@ -716,35 +716,35 @@
   }
 
   .services-grid .service-card:nth-child(1) {
-    background: url('../img/residential-interior.jpg') center/cover;
+    background: url('../img/residential-interior.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(2) {
-    background: url('../img/office.jpg') center/cover;
+    background: url('../img/office.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(3) {
-    background: url('../img/img1.jpeg') center/cover;
+    background: url('../img/img1.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(4) {
-    background: url('../img/bedroom.png') center/cover;
+    background: url('../img/bedroom.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(5) {
-    background: url('../img/wardrobe.jpg') center/cover;
+    background: url('../img/wardrobe.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(6) {
-    background: url('../img/turnkey.jpg') center/cover;
+    background: url('../img/turnkey.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(7) {
-    background: url('../img/50.jpeg') center/cover;
+    background: url('../img/50.webp') center/cover;
   }
 
   .services-grid .service-card:nth-child(8) {
-    background: url('../img/wallpaper.jpg') center/cover;
+    background: url('../img/wallpaper.webp') center/cover;
   }
 
   .service-card::before {
